@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    font-size: 100%;
+    font-family: sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+.parent{
+    width: 100%;
+    height: 100%;
+    border-bottom:2px dashed rgb(248, 0, 83);
+}
+h1{
+    font-size: 1.6rem;
+    color: rgb(14, 7, 24);
+    padding-top: 20px;
+    text-align: center;
+    background-color: #eee;
+}
+#result{
+    text-align: center;
+    width: 200px;
+    height: 150px;
+    border: 1.5px solid rgb(25, 214, 88);
+    margin-top: 40px;
+    border-radius: 5px;
+    padding-top: 60px;
+    font-size: 1.3rem;
+    color: rgb(4, 129, 0);
+}
+.pA{
+    width: 100%;
+    height: 50vh;
+    background-color: #eeeeee;
+    padding: 50px;
+}
+.iA{
+    margin: 10px 0px;
+}
