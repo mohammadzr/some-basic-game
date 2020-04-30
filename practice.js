@@ -66,7 +66,7 @@ var score = 0;
 function choose(e) {
     console.log(e)
     let math = Math.floor(Math.random() * 2);
-    
+
     if (e == math) {
         score++
         let win = document.getElementById("result-4-2");
@@ -85,5 +85,61 @@ function choose(e) {
     else {
         math = "head"
     }
-    document.getElementById("result-4-1").innerHTML ="computer guess: "+" "+ math;
+    document.getElementById("result-4-1").innerHTML = "computer guess: " + " " + math;
+}
+
+///---magic box---///
+
+function myAnswer() {
+    let answer = ["good", "cool", "awesome", "i dont actually know"];
+    let i = Math.floor(Math.random() * answer.length);
+    document.getElementById("result-5").innerHTML = answer[i]
+}
+
+///---geuss numbers---///
+let btn = document.getElementById("btn-g");
+let gamePlay = false;
+
+btn.addEventListener("click", function () {
+    if (!gamePlay) {
+        gamePlay = true;
+        btn.innerHTML = "guess";
+        maker();
+    }
+    else {
+        let winC=0;
+        var numb = document.querySelectorAll(".addg");
+        for (let i = 0; i < numb.length; i++) {
+            if (numb[i].value == numb[i].correct) {
+                numb[i].style.backgroundColor = "rgb(37, 173, 10)";
+                winC++
+            }
+            else {
+                if (numb[i].value < numb[i].correct) {
+                    numb[i].style.backgroundColor = "rgb(7, 122, 253)";
+                }
+                else {
+                    numb[i].style.backgroundColor = "rgb(253, 7, 81)";
+                }
+            }
+        }
+    }
+})
+
+function maker() {
+    for (let x = 0; x < 6; x++) {
+        let elem = document.createElement("input");
+        elem.setAttribute("type", "number");
+        elem.value = 0;
+        elem.style.height = "45px";
+        elem.max = 9;
+        elem.min = 0;
+        elem.size = 1;
+        elem.order = x;
+        elem.correct = Math.floor(Math.random() * 10)
+        elem.classList.add("addg")
+        elem.classList.add("game-animation")
+        let target = document.getElementById("btn-g");
+        document.getElementById("game-area").insertBefore(elem, target);
+    }
 }
